@@ -1,0 +1,65 @@
+set ratios 1:2:3
+set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/preview
+set icons true
+ 
+# movement mappings
+map gD cd ~/dl
+map gd cd ~/dox
+map gp cd ~/pix
+map gv cd ~/vids
+map gc cd ~/.config
+map gu cd ~/dox/universidade
+map go cd ~/vids/one_piece
+map gs cd ~/dox/computer_science
+map gm cd ~/dox/mangadesk
+
+# command mappings
+map <c-e> extract
+
+# show hidden files/directories
+map <backspace> set hidden!
+
+# basic commands
+cmd q quit
+cmd md mkdir
+cmd mf mkfile
+cmd ch chmod
+
+# interpreter for shell commands
+set shell sh
+
+# use enter for shell commands
+map <enter> shell
+
+# make directory
+cmd mkdir %printf "Directory name: " && read ans && mkdir $ans
+
+# make file
+cmd mkfile %printf "File name: " && read ans && touch $ans
+
+# change mode bits
+cmd chmod ${{
+    printf "Mode bits: "
+    read ans
+    
+    for file in $fx
+        do
+            chmod $ans $file
+        done
+    }}
+    
+
+# extract the current file with the right command
+# (xkcd link: https://xkcd.com/1168/)
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
