@@ -67,6 +67,7 @@ autocmd FileType sh nnoremap <F5> :w <CR> :!sh % <CR>
 autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd Filetype c setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Plugin Mappings
 nnoremap <F8> :Tagbar <CR>
