@@ -1,2 +1,2 @@
-# dot-files
-Just a collection with my dot-files.
+# dotfiles
+Just a collection with my dotfiles.
