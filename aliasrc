@@ -7,11 +7,8 @@ alias free='free -m'                        # show sizes in MB
 alias fcd='cd "$(find ~/ -type d | fzf)"'   # fuzzy change directory
 
 alias dur='exiftool -T -Duration -Filename' # show file's duration
-alias sxiv='sxiv -b'                        # no bottom status bar
 
 alias grep='grep --colour=auto'             # colorful
 alias egrep='egrep --colour=auto'           # colorful
 alias fgrep='fgrep --colour=auto'           # colorful
 alias np='nano -w PKGBUILD'
-
-alias matrix='neo-matrix -c green3 -S 12 -d 3 -r 0 -m "hello_friend"'
