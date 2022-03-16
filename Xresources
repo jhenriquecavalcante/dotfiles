@@ -1,13 +1,9 @@
-/* Sxiv */
-Sxiv.geometry:      3000x3000
-Sxiv.background:    #282828
-Sxiv.foreground:    #BDAE93
+/* Nsxiv */
+Nsxiv.window.background:  #282828
+Nsxiv.window.foreground:  #BDAE93
 
 /* Xterm */
 xterm*termName:     xterm-256color
 
 xterm*Background:   #282828
 xterm*Foreground:   #FFFFFF
-
-xterm*faceName:     Source Code Pro Regular
-xterm*faceSize:     12
