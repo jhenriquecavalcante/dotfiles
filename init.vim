@@ -4,8 +4,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
-Plug 'neoclide/coc.nvim'
-" Plug 'ycm-core/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -13,7 +12,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " Theme
@@ -23,25 +21,14 @@ set background=dark
 " Moving/Columns
 set mouse=a
 set scrolloff=4
-set signcolumn=yes
-set colorcolumn=80
-set cursorline
+set signcolumn=yes colorcolumn=80 cursorline
 set nowrap
 
 " Syntax/Indentation
 syntax on
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-set smartindent
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set autoindent smartindent
 set wildmode=longest,list,full
-
-" Spell checking
-hi clear SpellBad
-hi SpellBad cterm=underline
-nnoremap <C-S-e> :setlocal spell! spelllang=en <CR>
-nnoremap <C-S-p> :setlocal spell! spelllang=pt <CR>
 
 " Format/Encoding
 set fileformat=unix
@@ -54,20 +41,19 @@ set ignorecase smartcase
 " Numbers/Windows
 set number relativenumber
 set splitright splitbelow
-nnoremap <F3> :set number! relativenumber! <CR>
 
 " FileType Setup
 set nocompatible
 filetype plugin on
 
 " Language Mappings
-autocmd FileType c nnoremap <F5> :w <CR> :!gcc % -o %< && ./%< <CR>
-autocmd FileType python nnoremap <F5> :w <CR> :!python3 % <CR>
-autocmd FileType sh nnoremap <F5> :w <CR> :!sh % <CR>
-autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType c nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term gcc % -o %< && ./%< <CR>
+autocmd FileType sh nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term sh % <CR>
+autocmd FileType python nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term python3 % <CR>
+autocmd FileType nroff nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term groff -ms -k % -T pdf > %<.pdf <CR>
+
+" Language Specific Indentation
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-autocmd Filetype c setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Plugin Mappings
 nnoremap <F8> :Tagbar <CR>
@@ -83,6 +69,9 @@ nnoremap <C-L> <C-W>l
 " Save
 nnoremap <C-s> :w <CR>
 
+" Terminal
+nnoremap <A-t> :sp <CR> :resize 10 <CR> :term <CR>
+ 
 " Plugin configurations
 let g:user_emmet_mode='nv'
 let g:user_emmet_leader_key=','
