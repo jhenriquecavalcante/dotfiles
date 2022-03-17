@@ -11,7 +11,8 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'udalov/kotlin-vim'
 call plug#end()
 
 " Theme
@@ -50,10 +51,12 @@ filetype plugin on
 autocmd FileType c nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term gcc % -o %< && ./%< <CR>
 autocmd FileType sh nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term sh % <CR>
 autocmd FileType python nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term python3 % <CR>
-autocmd FileType nroff nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term groff -ms -k % -T pdf > %<.pdf <CR>
+autocmd FileType groff,nroff nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term groff -ms -k % -T pdf > %<.pdf <CR>
+autocmd FileType tex,latex,plaintex nnoremap <F5> :w <CR> :sp <CR> :resize 10 <CR> :term pdflatex % <CR>
 
 " Language Specific Indentation
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd Filetype kotlin setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " Plugin Mappings
 nnoremap <F8> :Tagbar <CR>
