@@ -18,32 +18,12 @@ map <backspace> set hidden!
 
 # basic commands
 cmd q quit
-cmd md mkdir
-cmd mf mkfile
-cmd ch chmod
 
 # interpreter for shell commands
 set shell sh
 
 # use enter for shell commands
 map <enter> shell
-
-# make directory
-cmd mkdir %printf "Directory name: " && read ans && mkdir $ans
-
-# make file
-cmd mkfile %printf "File name: " && read ans && touch $ans
-
-# change mode bits
-cmd chmod ${{
-    printf "Mode bits: "
-    read ans
-    
-    for file in $fx
-        do
-            chmod $ans $file
-        done
-    }}
 
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
