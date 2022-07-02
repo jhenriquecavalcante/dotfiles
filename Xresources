@@ -1,9 +1,0 @@
-/* Nsxiv */
-Nsxiv.window.background:  #282828
-Nsxiv.window.foreground:  #BDAE93
-
-/* Xterm */
-xterm*termName:     xterm-256color
-
-xterm*Background:   #282828
-xterm*Foreground:   #FFFFFF

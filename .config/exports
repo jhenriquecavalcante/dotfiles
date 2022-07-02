@@ -1,0 +1,9 @@
+export LESSHISTFILE=-
+export HISTSIZE=
+export HISTFILESIZE=
+export HISTFILE=~/.local/share/bash_history
+
+export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
+export GOPATH="$XDG_DATA_HOME"/go
+
+export PF_INFO="ascii title os kernel pkgs uptime memory"

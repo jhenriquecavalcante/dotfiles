@@ -1,0 +1,13 @@
+alias lf='lfrun'
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias ll='ls -lh'
+alias lla='ls -lah'
+alias fbk='cd "$(find ~/dox/ebooks_library/ -type d | fzf)"'
+alias fv='cd "$(find ~/vids/ -type d | fzf)"'
+alias fcs='cd "$(find ~/dox/computer_science/ -type d | fzf)"'
+alias fxo='xdg-open $(find . -type f | fzf) ; sleep 1 ; clear'
+
+alias "yta"='yt-dlp -o "%(autonumber)s-%(title)s.%(ext)s" -f b'
+alias "grep"='grep --color'
+alias "lynx"='lynx -cfg=~/.config/lynx/lynx.cfg'
