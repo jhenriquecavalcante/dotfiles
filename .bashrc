@@ -3,8 +3,8 @@
 #
 
 set -o vi
-source .config/aliasrc
-source .config/exports
+source $HOME/.config/aliasrc
+source $HOME/.config/exports
 EDITOR='nvim'
 
 # If not running interactively, don't do anything
