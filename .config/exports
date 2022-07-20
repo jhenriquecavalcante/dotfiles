@@ -1,9 +1,15 @@
+# History files
 export LESSHISTFILE=-
 export HISTSIZE=
 export HISTFILESIZE=
 export HISTFILE=~/.local/share/bash_history
 
+# Data files
 export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
 export GOPATH="$XDG_DATA_HOME"/go
 
+# pfetch
 export PF_INFO="ascii title os kernel pkgs uptime memory"
+
+# Java
+export WORKSPACE=$HOME/.local/share/workspace

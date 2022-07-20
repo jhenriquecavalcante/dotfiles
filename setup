@@ -1,0 +1,49 @@
+#!/bin/env bash
+
+# Update system
+cd ~/Downloads
+sudo apt update
+
+# Git, Java, Maven, JUnit5, Postgresql, tar
+sudo apt install git openjdk-11-jdk maven junit5 postgresql tar
+
+# pgAdmin4
+sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+sudo apt update
+sudo apt install pgadmin4
+
+# Node
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# VsCode
+sudo apt install software-properties-common apt-transport-https
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt update
+sudo apt install code
+
+# Lombok
+wget https://projectlombok.org/downloads/lombok.jar
+
+# Eclipse
+wget http://ftp.yz.yamagata-u.ac.jp/pub/eclipse/oomph/epp/2022-09/M1/eclipse-inst-linux64.tar.gz
+tar -xvf eclipse-inst-linux64.tar.gz
+
+# Postman
+wget https://dl.pstmn.io/download/latest/linux64
+tar -xvf linux64
+sudo mv Postman /opt/Postman
+sudo ln -s /opt/Postman/Postman /bin/postman
+wget https://build.rubrik.com/wp-content/uploads/2020/04/postman-logo.png
+sudo mv postman-logo.png /opt/Postman
+echo "[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=Postman
+Icon=/opt/Postman/postman-logo.png
+Exec=/bin/postman" > postman.desktop
+sudo mv postman.desktop /usr/share/applications/postman.desktop
