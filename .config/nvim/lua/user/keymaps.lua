@@ -48,7 +48,7 @@ keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<A-t>", "<cmd>ToggleTerm<cr>", opts)
 
 -- Compile
-keymap("n", "<F5>", "<cmd>TermExec cmd=\"make && clear && make run && make clean\"<cr>", opts)
+keymap("n", "<F5>", "<cmd>TermExec cmd=\"make\"<cr>", opts)
 
 -- Visual --
 -- Stay in indent mode
